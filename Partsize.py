@@ -84,10 +84,8 @@ ax4.set_title('Value Mask')
 # plt.show()
 
 # Konturen finden
-contours, _ = cv2.findContours(value_mask + saturation_mask, cv2.RETR_EXTERNAL,
-                               cv2.CHAIN_APPROX_SIMPLE)
-filtered_contours = [contour for contour in contours
-                     if 100 * 500 < cv2.contourArea(contour) < image_to_show.size * 0.9]
+contours, _ = cv2.findContours(value_mask + saturation_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+filtered_contours = [contour for contour in contours if 100 * 500 < cv2.contourArea(contour) < image_to_show.size * 0.9]
 
 print(f"Gefundene Konturen: {len(filtered_contours)}")
 
